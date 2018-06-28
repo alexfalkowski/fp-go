@@ -14,12 +14,12 @@ var _ = Describe("Immutable", func() {
 		person = createPerson("Alex")
 	})
 
-	It("should allow to mutate", func() {
+	It("allows to mutate", func() {
 		changeName(&person, "Alejandro")
 		Expect(person.name).To(Equal("Alejandro"))
 	})
 
-	It("should not allow to mutate", func() {
+	It("doesn't allow to mutate", func() {
 		cantChangeName(person, "Alejandro")
 		Expect(person.name).To(Equal("Alex"))
 	})
